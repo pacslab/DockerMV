@@ -15,3 +15,11 @@ make binary
 ```
 
 5) To run a command using DockerMV, your command needs to start with ./build/docker
+
+## Experiments
+
+### TeaStore
+The [TeaStore](https://github.com/DescartesResearch/TeaStore) application is a reference application for testing and benchmarking. You can find two version of its Recommender service on our [Docker Hub](https://hub.docker.com/u/sgholami) page. Also, we used the teastore.jmx to create a load on the system for our testing purposes.
+
+### Znn
+The [Znn](https://github.com/cmu-able/znn) application is used for testing and benchmarking of self-adaptive applications. We created two version of its content-providing component which are available on our [Docker Hub](https://hub.docker.com/u/alirezagoli) page. Also, we used the znn.jmx to create a load on the system for our testing purposes.
