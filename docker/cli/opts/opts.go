@@ -48,21 +48,6 @@ func (opts *ListOpts) String() string {
 // Set validates if needed the input value and adds it to the
 // internal slice.
 func (opts *ListOpts) Set(value string) error {
-	// fmt.Println(value)
-	// if value == "nan" {
-	// 	(*opts.Values) = (*opts.Values)[:0]
-	// } else {
-	// 	if opts.validator != nil {
-	// 		v, err := opts.validator(value)
-	// 		if err != nil {
-	// 			return err
-	// 		}
-	// 		value = v
-	// 	}
-	// 	// (*opts.Values) = (*opts.Values)[:0]
-	// 	(*opts.Values) = append((*opts.Values), value)
-	// }
-	// fmt.Println(*opts.Values)
 	if opts.validator != nil {
 		v, err := opts.validator(value)
 		if err != nil {
@@ -70,9 +55,7 @@ func (opts *ListOpts) Set(value string) error {
 		}
 		value = v
 	}
-	(*opts.Values) = (*opts.Values)[:0]
 	(*opts.Values) = append((*opts.Values), value)
-	fmt.Println(*opts.Values)
 	return nil
 }
 
@@ -84,6 +67,11 @@ func (opts *ListOpts) Delete(key string) {
 			return
 		}
 	}
+}
+
+func (opts *ListOpts) Clear() {
+	*opts.Values = nil
+	return
 }
 
 // GetMap returns the content of values in a map in order to avoid
