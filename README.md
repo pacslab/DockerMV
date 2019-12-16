@@ -9,7 +9,7 @@ In order to run this program, follow these steps:
 
 3) Download this project and put in you GO home directory, e.g., go/src/github/ directory. 
 
-4) Move to docker/cli/build directory and run the following command to build the project.
+4) Move to docker/cli directory and run the following command to build the project.
 ```
 make binary
 ```
