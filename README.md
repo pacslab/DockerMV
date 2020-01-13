@@ -19,7 +19,7 @@ In order to run this program, follow these steps:
     ```
     At the end of the file add this line:
     ```
-    export GOPATH=$HOME/work
+    export GOPATH=$HOME/go
     export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
     ```
     Now save and close the file, and refresh your profile.
