@@ -4,27 +4,27 @@ DockerMv is an extended version of Docker which supports software multi-versioni
 ## How to use?
 In order to run this program, follow these steps:
 1) Install the [go programming language](https://golang.org/dl/) as following:
-1.1) Run the following commands:
-```
-sudo apt-get update
-sudo apt-get -y upgrade
-wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz
-sudo tar -xvf go1.13.6.linux-amd64.tar.gz
-sudo mv go /usr/local
-```
-1.2) Now set the GOPATH variable, which tells GO where to look for its files:
-```
-sudo nano ~/.profile
-```
-At the end of the file add this line:
-```
-export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-```
-Now save and close the file, and refresh your profile.
-```
-source ~/.profile
-```
+  1.1) Run the following commands:
+  ```
+  sudo apt-get update
+  sudo apt-get -y upgrade
+  wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz
+  sudo tar -xvf go1.13.6.linux-amd64.tar.gz
+  sudo mv go /usr/local
+  ```
+  1.2) Now set the GOPATH variable, which tells GO where to look for its files:
+  ```
+  sudo nano ~/.profile
+  ```
+  At the end of the file add this line:
+  ```
+  export GOPATH=$HOME/work
+  export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+  ```
+  Now save and close the file, and refresh your profile.
+  ```
+  source ~/.profile
+  ```
 
 2) Install [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 
 
