@@ -27,7 +27,29 @@ In order to run this program, follow these steps:
     source ~/.profile
     ```
 
-2) Install [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) 
+2) Install [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/) as follows:
+
+    2.1) Run the following commands:
+    ```
+    sudo apt update
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    sudo apt update
+    apt-cache policy docker-ce
+    ```
+    At the end you should see output similar to this:
+    ```
+    Installed: (none)
+    Candidate: 5:19.03.5~3-0~ubuntu-bionic
+    Version table:
+        5:19.03.5~3-0~ubuntu-bionic 500
+            500 https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
+    ```
+    2.2) Finally install docker
+    ```
+    sudo apt install docker-ce
+    ```
 
 3) Download this project and put in you GO home directory, e.g., go/src/github/ directory. 
 
