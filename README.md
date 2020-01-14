@@ -19,7 +19,7 @@ In order to run this program, follow these steps:
     ```
     At the end of the file add this line:
     ```
-    export GOPATH=$HOME/go
+    export GOPATH=$HOME/DockerMV/go
     export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
     ```
     Now save and close the file, and refresh your profile.
@@ -51,9 +51,9 @@ In order to run this program, follow these steps:
     sudo apt install docker-ce
     ```
 
-3) Download this project and put in you GO home directory, e.g., go/src/github/ directory. 
+3) Clone this project and put in you $HOME directory.
 
-4) Move to docker/cli directory and run the following command to build the project.
+4) Move to $HOME/go/src/github.com/docker/cli directory and run the following command to build the project.
 ```
 make binary
 ```
