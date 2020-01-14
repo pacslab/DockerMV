@@ -58,7 +58,12 @@ In order to run this program, follow these steps:
 make binary
 ```
 
-5) To run a command using DockerMV, your command needs to start with ./build/docker
+5) Run the following command from your $HOME directory.
+```
+chmod -R 777 DockerMV
+```
+
+6) To run a command using DockerMV, first move to $HOME/go/src/github.com/docker/cli directory, and your command needs to start with ./build/docker
 
 ## Experiments
 
