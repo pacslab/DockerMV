@@ -62,9 +62,17 @@ chmod -R 777 DockerMV
 ```
 make binary
 ```
-You will see the following when the program is successfuly compiled:
+You will see a similar message when the program is successfuly compiled:
 ```
+WARNING: you are not in a container.
+Use "make -f docker.Makefile binary" or set
+DISABLE_WARN_OUTSIDE_CONTAINER=1 to disable this warning.
 
+Press Ctrl+C now to abort.
+
+WARNING: binary creates a Linux executable. Use cross for macOS or Windows.
+./scripts/build/binary
+Building statically linked build/docker-linux-amd64
 ```
 
 
