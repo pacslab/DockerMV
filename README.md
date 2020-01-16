@@ -53,15 +53,20 @@ In order to run this program, follow these steps:
 
 3) Clone this project and put in you $HOME directory.
 
-4) Move to $HOME/go/src/github.com/docker/cli directory and run the following command to build the project.
-```
-make binary
-```
-
-5) Run the following command from your $HOME directory.
+4) Run the following command from your $HOME directory.
 ```
 chmod -R 777 DockerMV
 ```
+
+5) Move to $HOME/go/src/github.com/docker/cli directory and run the following command to build the project.
+```
+make binary
+```
+You will see the following when the program is successfuly compiled:
+```
+
+```
+
 
 6) To run a command using DockerMV, first move to $HOME/go/src/github.com/docker/cli directory, and your command needs to start with ./build/docker
 
