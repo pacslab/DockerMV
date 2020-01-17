@@ -223,8 +223,9 @@ func newCreateCommand(dockerCli command.Cli) *cobra.Command {
 			execOpts.Container = nginxName
 
 			// The content of the config file of the NGINX
-			conf := "echo 'upstream servers {" + servers + "} server {listen 80 default_server; access_log  /var/log/nginx/access.log  main; server_name _; location / { proxy_pass http://servers;}}' > /etc/nginx/conf.d/default.conf, echo '" + ruleSet + "' > rules.txt"
-			execOpts.Command = []string{"sh", "-c", conf}
+			conf := "echo 'upstream servers {" + servers + "} server {listen 80 default_server; access_log  /var/log/nginx/access.log  main; server_name _; location / { proxy_pass http://servers;}}' > /etc/nginx/conf.d/default.conf"
+                        conf2 := "echo '" + ruleSet + "' > rules.txt"
+                        execOpts.Command = []string{"sh", "-c", conf + "&&" + conf2}
 
 			container.RunExec(dockerCli, execOpts)
 
