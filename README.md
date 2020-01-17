@@ -106,6 +106,14 @@ docker run -e "REGISTRY_HOST=10.2.5.26" -e "REGISTRY_PORT=10000" -e "HOST_NAME=1
 ### Znn
 The [Znn](https://github.com/cmu-able/znn) application is used for testing and benchmarking of self-adaptive applications. We created two version of its content-providing component which are available on our [Docker Hub](https://hub.docker.com/u/alirezagoli) page. Also, we used the [znn.jmx](znn.jmx) to create a load on the system for our testing purposes.
 
+#### How to Run the Znn with DockerMV
+You can setup the Znn application with the following commands. Notice to replace the HOST_IP with your host IP address.
+```
+docker run --network="my-net" -p 3306:3306 alirezagoli/znn-mysql:v1
+
+./build/docker service create HOST_IP my-net my_znn 1081 my_rule.txt alirezagoli/znn-text:v1 1 1g 1g 0.2 alirezagoli/znn-multimedia:v1 1 1g 1g 0.2
+```
+
 ## Cite Us
 
 The DockerMV was first published in Proceedings of the 2020 ACM/SPEC International Conference on Performance Engineering (ICPE '20). You can find the paper on the [ASGAARD lab website](https://www.google.com/url?q=http://asgaard.ece.ualberta.ca/publications/&sa=D&source=hangouts&ust=1579122442788000&usg=AFQjCNFElRVZ9AvFDUP-bTIoO4r5-XdNlg).
