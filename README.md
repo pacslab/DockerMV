@@ -71,7 +71,12 @@ WARNING: binary creates a Linux executable. Use cross for macOS or Windows.
 Building statically linked build/docker-linux-amd64
 ```
 
-6) To run a command using DockerMV, first move to $HOME/DockerMV/go/src/github.com/docker/cli directory, and your command needs to start with ./build/docker
+6) To run services with DockerMV, you need to create an overlay network by running the following command:
+```
+docker network create -d overlay my-net
+```
+
+7) To run a command using DockerMV, first move to $HOME/DockerMV/go/src/github.com/docker/cli directory, and your command needs to start with ./build/docker
 
 ## Experiments
 
