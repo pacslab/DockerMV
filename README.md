@@ -84,26 +84,6 @@ docker network create -d overlay --attachable my-net
 ### TeaStore
 The [TeaStore](https://github.com/DescartesResearch/TeaStore) application is a reference application for testing and benchmarking. You can find two version of its Recommender service on our [Docker Hub](https://hub.docker.com/u/sgholami) page. Also, we used the [teastore.jmx](teastore.jmx) to create a load on the system for our testing purposes.
 
-#### How to Run the TeaStore with DockerMV
-The TeaStore's [wiki page](https://github.com/DescartesResearch/TeaStore/wiki/Getting-Started#run-teastore-containers-using-docker) has a complete instruction on how to install the TeaStore on Docker. The followings instruct on how to use the TeaStore with two different Recommender Services. Remember to replace your IP addresses in the following commands.
-
-```
-docker run -e "HOST_NAME=10.2.5.26" -e "SERVICE_PORT=10000" -p 10000:8080 -d descartesresearch/teastore-registry
-
-docker run -p 3306:3306 -d descartesresearch/teastore-db
-
-docker run -e "REGISTRY_HOST=10.2.5.26" -e "REGISTRY_PORT=10000" -e "HOST_NAME=10.2.5.26" -e "SERVICE_PORT=1111" -e "DB_HOST=10.2.5.26" -e "DB_PORT=3306" -p 1111:8080 -d descartesresearch/teastore-persistence
-
-docker run -e "REGISTRY_HOST=10.2.5.26" -e "REGISTRY_PORT=10000" -e "HOST_NAME=10.2.5.26" -e "SERVICE_PORT=2222" -p 2222:8080 -d descartesresearch/teastore-auth
-
-docker run -e "REGISTRY_HOST=10.2.5.26" -e "REGISTRY_PORT=10000" -e "HOST_NAME=10.2.5.26" -e "SERVICE_PORT=4444" -p 4444:8080 -d descartesresearch/teastore-image
-
-docker run -e "REGISTRY_HOST=10.2.5.26" -e "REGISTRY_PORT=10000" -e "HOST_NAME=10.2.5.26" -e "SERVICE_PORT=8080" -p 8080:8080 -d descartesresearch/teastore-webui
-
-./build/docker service create e REGISTRY_HOST=10.2.5.26 e REGISTRY_PORT=10000 e HOST_NAME=10.2.5.26 e SERVICE_PORT=3333 10.2.5.26 my-net my_recommender 8080 my_rule.txt sgholami/teastore-recommender:MultipleTrain 1 sgholami/teastore-recommender:SingleTrain 1
-
-```
-
 ### Znn
 The [Znn](https://github.com/cmu-able/znn) application is used for testing and benchmarking of self-adaptive applications. We created two version of its content-providing component which are available on our [Docker Hub](https://hub.docker.com/u/alirezagoli) page. Also, we used the [znn.jmx](znn.jmx) to create a load on the system for our testing purposes.
 
@@ -112,7 +92,17 @@ You can setup the Znn application with the following commands. Notice to replace
 ```
 docker run --network="my-net" -d -p 3306:3306 alirezagoli/znn-mysql:v1
 
-./build/docker service create HOST_IP my-net my_znn 1081 my_rule.txt alirezagoli/znn-text:v1 1 1g 1g 0.2 alirezagoli/znn-multimedia:v1 1 1g 1g 0.2
+./build/docker service create HOST_IP my-net my_znn 1081 $HOME/DockerMV/znn_sample_rule.txt alirezagoli/znn-text:v1 1 1g 1g 0.2 alirezagoli/znn-multimedia:v1 1 1g 1g 0.2
+```
+
+By running th following command you can see four containers are running.
+```
+docker ps -a
+```
+
+Now, you can see the service working by running the following command. Notice that the NGINX port is randomly assigned and you can find it by the above command.
+```
+curl http://HOST_IP:NGINX_PORT
 ```
 
 ## Cite Us
