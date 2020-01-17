@@ -73,6 +73,7 @@ Building statically linked build/docker-linux-amd64
 
 6) To run services with DockerMV, you need to create an overlay network by running the following command:
 ```
+docker swarm init
 docker network create -d overlay my-net
 ```
 
