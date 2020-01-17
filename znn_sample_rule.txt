@@ -1,0 +1,6 @@
+RT < 0.1 , version znn−multimedia:v1 perc=99; version znn−text:v1 perc=1; 
+RT < 0.2 , version znn−multimedia:v1 perc=80; version znn−text:v1 perc=20;
+RT < 0.3 , version znn−multimedia:v1 perc=70; version znn−text:v1 perc=30;
+RT < 0.6 , version znn−multimedia:v1 perc=40; version znn−text:v1 perc=60;
+RT < 0.8 , version znn−multimedia:v1 perc=30; version znn−text:v1 perc=70;
+RT >= 0.8 , version znn−multimedia:v1 perc=20; version znn−text:v1 perc=80;
