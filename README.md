@@ -110,7 +110,7 @@ The [Znn](https://github.com/cmu-able/znn) application is used for testing and b
 #### How to Run the Znn with DockerMV
 You can setup the Znn application with the following commands. Notice to replace the HOST_IP with your host IP address.
 ```
-docker run --network="my-net" -p 3306:3306 alirezagoli/znn-mysql:v1
+docker run --network="my-net" -d -p 3306:3306 alirezagoli/znn-mysql:v1
 
 ./build/docker service create HOST_IP my-net my_znn 1081 my_rule.txt alirezagoli/znn-text:v1 1 1g 1g 0.2 alirezagoli/znn-multimedia:v1 1 1g 1g 0.2
 ```
