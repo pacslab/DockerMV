@@ -73,8 +73,8 @@ Building statically linked build/docker-linux-amd64
 
 6) To run services with DockerMV, you need to create an overlay network by running the following command:
 ```
-docker swarm init
-docker network create -d overlay --attachable my-net
+sudo docker swarm init
+sudo docker network create -d overlay --attachable my-net
 ```
 
 7) To run a command using DockerMV, first move to $HOME/DockerMV/go/src/github.com/docker/cli directory, and your command needs to start with ./build/docker
@@ -90,14 +90,14 @@ The [Znn](https://github.com/cmu-able/znn) application is used for testing and b
 #### How to Run the Znn with DockerMV
 You can setup the Znn application with the following commands. Notice to replace the HOST_IP with your host IP address.
 ```
-docker run --network="my-net" -d -p 3306:3306 alirezagoli/znn-mysql:v1
+sudo docker run --network="my-net" -d -p 3306:3306 alirezagoli/znn-mysql:v1
 
 ./build/docker service create HOST_IP my-net my_znn 1081 $HOME/DockerMV/znn_sample_rule.txt alirezagoli/znn-text:v1 1 1g 1g 0.2 alirezagoli/znn-multimedia:v1 1 1g 1g 0.2
 ```
 
 By running th following command you can see four containers are running.
 ```
-docker ps -a
+sudo docker ps -a
 ```
 
 Now, you can see the service working by running the following command. Notice that the NGINX port is randomly assigned and you can find it by the above command.
