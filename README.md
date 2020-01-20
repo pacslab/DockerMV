@@ -106,7 +106,7 @@ sudo docker ps -a
 
 Now, you can see the service working by running the following command. Notice that the NGINX port is randomly assigned and you can find it by the above command.
 ```
-curl http://HOST_IP:NGINX_PORT
+curl http://HOST_IP:NGINX_PORT/news.php
 ```
 
 ## Cite Us
