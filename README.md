@@ -73,7 +73,7 @@ Building statically linked build/docker-linux-amd64
 
 6) To run services with DockerMV, you need to create a Docker Swarm. Check the public IP address of your machine on your network
 ```
-ifconfig
+hostname -I | awk '{print $1}'
 ```
 Then, you need to create an overlay network by running the following command:
 ```
