@@ -71,7 +71,7 @@ WARNING: binary creates a Linux executable. Use cross for macOS or Windows.
 Building statically linked build/docker-linux-amd64
 ```
 
-6) To run services with DockerMV, you need to create a Docker Swarm. Check the public IP address of your machine on your network
+6) To run services with DockerMV, you need to create a Docker Swarm. Check the public IP address of your machine on your network. Notice that the IP address must be accessible from outside.
 ```
 hostname -I | awk '{print $1}'
 ```
@@ -107,6 +107,17 @@ sudo docker ps -a
 Now, you can see the service working by running the following command. Notice that the NGINX port is randomly assigned and you can find it by the above command.
 ```
 curl http://HOST_IP:NGINX_PORT/news.php
+```
+
+## How to remove containers?
+In order to remove the containers you need to first stop them.
+```
+sudo docker stop CONTAINER_ID
+```
+
+Afterward, you can remove the containers 
+```
+sudo docker rm CONTAINER_ID
 ```
 
 ## Cite Us
