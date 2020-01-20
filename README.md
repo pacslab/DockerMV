@@ -71,9 +71,13 @@ WARNING: binary creates a Linux executable. Use cross for macOS or Windows.
 Building statically linked build/docker-linux-amd64
 ```
 
-6) To run services with DockerMV, you need to create an overlay network by running the following command:
+6) To run services with DockerMV, you need to create a Docker Swarm. Check the public IP address of your machine on your network
 ```
-sudo docker swarm init
+ifconfig
+```
+Then, you need to create an overlay network by running the following command:
+```
+sudo docker swarm init --advertise-addr HOST_IP
 sudo docker network create -d overlay --attachable my-net
 ```
 
